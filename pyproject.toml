@@ -1,0 +1,43 @@
+[project]
+name = "ai-voice-clone-studio"
+version = "0.6.2"
+description = "AI voice cloning generator — zero-shot and few-shot voice synthesis studio for Windows desktop."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "ai-voice-clone-studio maintainers" }]
+dependencies = [
+    "torch>=2.4.0",
+    "torchaudio>=2.4.0",
+    "numpy>=1.26",
+    "scipy>=1.13",
+    "soundfile>=0.12.1",
+    "librosa>=0.10.2",
+    "pyyaml>=6.0",
+    "pydantic>=2.7",
+    "loguru>=0.7.2",
+    "typer>=0.12.3",
+    "sounddevice>=0.4.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2", "pytest-asyncio>=0.23", "ruff>=0.5", "mypy>=1.10"]
+cuda = ["torch>=2.4.0+cu121"]
+
+[project.scripts]
+avcs = "ai_voice_clone_studio.cli:app"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
