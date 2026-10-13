@@ -1,0 +1,1 @@
+"""Thin request handlers — translate inputs, delegate to services."""
