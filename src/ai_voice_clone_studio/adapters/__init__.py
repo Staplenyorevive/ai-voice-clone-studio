@@ -1,0 +1,1 @@
+"""Platform adapters — Windows audio, GPU backends, filesystem quirks."""
