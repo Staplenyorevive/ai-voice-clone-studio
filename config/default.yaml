@@ -1,0 +1,34 @@
+app:
+  name: ai-voice-clone-studio
+  version: 0.6.2
+  data_dir: "%LOCALAPPDATA%/ai-voice-clone-studio"
+  log_level: INFO
+
+audio:
+  sample_rate: 24000
+  bit_depth: 16
+  channels: 1
+  chunk_ms: 40
+  denoise: true
+  normalize_lufs: -16.0
+
+model:
+  backend: "auto"          # auto | cuda | cpu | dml
+  checkpoint_dir: "models/checkpoints"
+  embedding_dir: "models/embeddings"
+  default_voice: "neutral_v1"
+  zero_shot: true
+  max_ref_seconds: 30
+
+synthesis:
+  f0_method: "rmvpe"       # rmvpe | harvest | crepe
+  pitch_shift: 0
+  index_rate: 0.75
+  protect: 0.33
+  temperature: 0.6
+  seed: 6767
+
+storage:
+  voices_dir: "voices"
+  exports_dir: "exports"
+  max_voice_profiles: 128
