@@ -1,0 +1,1 @@
+"""Data models (pydantic). Pure data — no I/O, no side effects."""
